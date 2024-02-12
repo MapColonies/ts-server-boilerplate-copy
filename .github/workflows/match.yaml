@@ -32,6 +32,7 @@ jobs:
 
       - name: login to acr using helm
         run: |
+          echo ${{ secrets.ACR_URL }}
           helm registry login ${{ secrets.ACR_URL }} --username ${{ secrets.ACR_PUSH_USER }} --password ${{ secrets.ACR_PUSH_TOKEN }} 
 
       - name: Get Chart name
